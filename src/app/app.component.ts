@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   amtSingles: number = 0;
   amtCarton: number = 0;
   selectedValue: string = '';
+  
 
   constructor(
     private _http: HttpClient,
@@ -44,8 +45,15 @@ export class AppComponent implements OnInit {
     console.log('Singles Count', this.amtSingles);
     console.log('Total', count);
 
-    let totalPrice = this._tableService.getPriceByProditEqualsAndItemcount(id, count)
-    console.log(totalPrice);
+    this._tableService.getPriceByProditEqualsAndItemcount(id, count).subscribe(
+      (totalPrice: number) => {
+        console.log('Total Price:', totalPrice);
+        // You can now use the total price in your component logic
+      },
+      (error) => {
+        console.error('Error fetching total price:', error);
+      }
+    );
   }
 
 

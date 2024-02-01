@@ -13,7 +13,12 @@ export class TableService{
     }
 
     getPriceByProditEqualsAndItemcount(id: number , count: number): Observable<any>{
+        console.log("Hello")
         const params = {id,count}
+        console.log(id);
+        console.log(count);
+        console.log(params);
+        console.log(this._http.get('http://localhost:8081/api/v1/price/gettotalprice/${params}'));
         return this._http.get('http://localhost:8081/api/v1/price/gettotalprice/${params}')
     }
 }
