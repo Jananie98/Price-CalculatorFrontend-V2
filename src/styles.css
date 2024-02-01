@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+/* Import Bootstrap CSS via CDN */
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css';
+/* src/styles.css or src/styles.scss */
+
+/* Add Font Awesome CSS via CDN */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
